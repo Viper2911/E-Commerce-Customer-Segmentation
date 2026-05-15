@@ -36,17 +36,17 @@ if submit_button:
     cluster_id = model.predict(input_scaled)[0]
     st.divider()
 
-    if cluster_id == 0:
+    if cluster_id == 1:
         st.success("Segment: Loyal VIPs")
         st.write("These customers buy often, spend a lot, and purchased recently.")
         st.info("Marketing Action: Send exclusive early-access products and premium loyalty rewards. Do not discount heavily.")
         
-    elif cluster_id == 1:
+    elif cluster_id == 2:
         st.warning("Segment: Churn-Risk / Slipping Away")
         st.write("These customers used to spend money but haven't visited the site in a long time.")
         st.info("Marketing Action: Send aggressive 'We miss you' discount codes to win them back.")
         
-    elif cluster_id == 2:
+    elif cluster_id == 0:
         st.info("Segment: Recent Shoppers / Potential Loyalists")
         st.write("They bought recently but have low frequency and spend.")
         st.info("Marketing Action: Nurture them. Recommend related products based on their first purchase to encourage a second order.")
